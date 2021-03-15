@@ -17,7 +17,7 @@
 ## How to upload code
 ### https://github.com/andidittrich/NodeMCU-Tool
 1. Run PowerShell
-1. Navigate `C:\Users\mason\documents\projects\nodemcu\wifi-station`
+1. Navigate `C:\Users\mason\documents\projects\nodemcu\esp8266-controller`
 1. Create initial File System (only required first time)
     - Execute: `nodemcu-tool mkfs`
 1. Execute `nodemcu-tool upload <filename>`

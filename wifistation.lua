@@ -11,8 +11,6 @@ function WifiStation:new()
     station:onAuthModeChange()
     station:onIpSet()
 
-    wifi.setmode(wifi.STATION)
-
     return station
 end
 
@@ -25,7 +23,7 @@ end
 
 function WifiStation:connect(ssid, password)
     self.ssid = ssid
-
+    wifi.setmode(wifi.STATION)
     return wifi.sta.config({
         ssid = ssid,
         pwd = password
