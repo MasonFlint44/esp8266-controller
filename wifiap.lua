@@ -5,11 +5,13 @@ function WifiAp:new()
     local ap = {}
     setmetatable(ap, WifiAp)
 
+    ap.num_clients = 0
+    ap.get_ip_delay = 100
+
     -- Register default event handlers
     ap:onClientConnected()
     ap:onClientDisconnected()
     ap:onProbe()
-    ap.num_clients = 0
 
     return ap
 end
@@ -25,19 +27,19 @@ end
 function WifiAp:onClientConnected(handler)
     local connectedHandler = function(event)
         self.num_clients = self.num_clients + 1
-        -- TODO: lookup ip in table with mac
+        local timer = tmr.create()
         local timerHandler = function()
             local clients = wifi.ap.getclient()
-            for mac, ip in pairs(clients) do
-                print(mac, ip)
+            local ip = clients[event.MAC]
+            if ip == nil then
+                return
             end
-
+            timer:unregister()
             if handler ~= nil then
-                handler(event)
+                handler({mac=event.MAC, ip=ip})
             end
         end
-        -- TODO: tweak timer value
-        tmr.create():alarm(1000, tmr.ALARM_SINGLE, timerHandler)
+        timer:alarm(self.get_ip_delay, tmr.ALARM_AUTO, timerHandler)
     end
     wifi.eventmon.register(wifi.eventmon.AP_STACONNECTED, connectedHandler)
 end
