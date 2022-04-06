@@ -1,0 +1,10 @@
+{
+    "name": "things-dev-esp8266-controller",
+    // "image": "debian:stable-slim",
+    "build": {"dockerfile": "Dockerfile"},
+    "extensions": ["sumneko.lua"],
+    "settings": {},
+    "mounts": ["source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind"],
+    "postCreateCommand": "./.devcontainer/postCreate.sh",
+    "postStartCommand": "./.devcontainer/postStart.sh",
+}
