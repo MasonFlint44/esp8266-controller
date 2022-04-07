@@ -44,17 +44,25 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#dev-container">Dev container</a></li>
+        <li><a href="#build-firmware">Build firmware</a></li>
+        <li><a href="#flash-firmware">Flash firmware</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+        <a href="#usage">Usage</a>
+        <ul>
+            <li href="#upload-code-to-device"><a>Upload code to device</a></li>
+            <li href="#execute-code-on-device"><a>Execute code on device</a></li>
+        </ul>
+    </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -108,13 +116,15 @@ The repo contains a .devcontainer directory that defines a container to be used 
 - [Nodemcu-tool](https://github.com/AndiDittrich/NodeMCU-Tool) - used to upload code to device
 
 ### Build firmware - [docs](https://nodemcu.readthedocs.io/en/release/build/)
+1. Start dev container
 1. `cd ~/nodemcu-firmware`
 1. Edit `app/include/user_modules.h` to add or remove modules
 1. Run `make`
 1. Get build output from `bin` directory
 
 ### Flash firmware - [docs](https://nodemcu.readthedocs.io/en/release/flash/)
-1. Navigate to build output directory `cd ~/nodemcu-firmware/bin`
+1. Start dev container
+1. Navigate to build output directory `cd ~/nodemcu-firmware/bin`. See instructions to build firmware if directory empty.
 1. Execute the following:
     ```
     esptool.py --port COM3 write_flash -fm dio 0x00000 0x00000.bin
@@ -129,6 +139,7 @@ The repo contains a .devcontainer directory that defines a container to be used 
 ## Usage
 
 ### Upload code to device - [docs](https://github.com/andidittrich/NodeMCU-Tool)
+1. Start dev container
 1. Create initial File System (only required first time)
     - Execute: `nodemcu-tool mkfs`
 1. Execute `nodemcu-tool upload <filename>`
@@ -145,7 +156,7 @@ The repo contains a .devcontainer directory that defines a container to be used 
 1. Ensure baud rate is set to at least 115200
 1. Press RST button on device to restart - output should appear in Serial Monitor
 
-NOTE: it is possible to execute functions on the device by providing input to Serial Monitor. Documentation needs added for this.
+NOTE: It is possible to execute functions on the device by providing input to Serial Monitor. Documentation needs added for this.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
