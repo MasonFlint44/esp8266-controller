@@ -59,8 +59,8 @@
     <li>
         <a href="#usage">Usage</a>
         <ul>
-            <li href="#upload-code-to-device"><a>Upload code to device</a></li>
-            <li href="#execute-code-on-device"><a>Execute code on device</a></li>
+            <li><a href="#upload-code-to-device">Upload code to device</a></li>
+            <li><a href="#execute-code-on-device">Execute code on device</a></li>
         </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -73,6 +73,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
+<div id="about-the-project"></div>
 ## About The Project
 This is an application written for the NodeMCU framework. It serves as the controller software for an esp8266 node on the things.dev platform.
 
