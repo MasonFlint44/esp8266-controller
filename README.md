@@ -74,14 +74,19 @@
 
 <!-- ABOUT THE PROJECT -->
 <div id="about-the-project"></div>
+
 ## About The Project
 This is an application written for the NodeMCU framework. It serves as the controller software for an esp8266 node on the things.dev platform.
+
+<div id="features"></div>
 
 ### Features
 - negotiates and manages Wi-Fi connection
 - securely exchanges Wi-Fi credentials
 - configure via Android interface
 - exchanges data over MQTT
+
+<div id="built-with"></div>
 
 ### Built With
 - [NodeMCU](https://nodemcu.readthedocs.io/en/release/)
@@ -93,6 +98,8 @@ This is an application written for the NodeMCU framework. It serves as the contr
 
 
 <!-- GETTING STARTED -->
+<div id="getting-started"></div>
+
 ## Getting Started
 The repo contains a .devcontainer directory that defines a container to be used as the development environment. See [link](https://code.visualstudio.com/docs/remote/containers) for more info about dev containers.
 
@@ -103,6 +110,8 @@ The repo contains a .devcontainer directory that defines a container to be used 
 1. Install the `ms-vscode-remote.remote-containers` extension for vscode
 1. Open the repo directory with vscode
 1. Select "Reopen in Container"
+
+<div id="dev-container"></div>
 
 ### Dev container
 - Based on debian-slim image
@@ -116,12 +125,16 @@ The repo contains a .devcontainer directory that defines a container to be used 
 - [Esptool](https://github.com/espressif/esptool) - used to flash firmware
 - [Nodemcu-tool](https://github.com/AndiDittrich/NodeMCU-Tool) - used to upload code to device
 
+<div id="build-firmware"></div>
+
 ### Build firmware - [docs](https://nodemcu.readthedocs.io/en/release/build/)
 1. Start dev container
 1. `cd ~/nodemcu-firmware`
 1. Edit `app/include/user_modules.h` to add or remove modules
 1. Run `make`
 1. Get build output from `bin` directory
+
+<div id="flash-firmware"></div>
 
 ### Flash firmware - [docs](https://nodemcu.readthedocs.io/en/release/flash/)
 1. Start dev container
@@ -137,7 +150,11 @@ The repo contains a .devcontainer directory that defines a container to be used 
 
 
 <!-- USAGE EXAMPLES -->
+<div id="usage"></div>
+
 ## Usage
+
+<div id="upload-code-to-device"></div>
 
 ### Upload code to device - [docs](https://github.com/andidittrich/NodeMCU-Tool)
 1. Start dev container
@@ -150,6 +167,8 @@ The repo contains a .devcontainer directory that defines a container to be used 
     ./lua_modules/fifo/fifosock.lua
     ./lua_modules/fifo/fifo.lua
     ```
+
+<div id="execute-code-on-device"></div>
 
 ### Execute code on device
 1. Run Arduino IDE
@@ -164,6 +183,8 @@ NOTE: It is possible to execute functions on the device by providing input to Se
 
 
 <!-- ROADMAP -->
+<div id="roadmap"></div>
+
 ## Roadmap
 
 <!-- - [ ] Feature 1
@@ -178,6 +199,8 @@ See the [open issues](https://github.com/masonflint44/things-dev-esp8266-firmwar
 
 
 <!-- CONTRIBUTING -->
+<div id="contributing"></div>
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -196,6 +219,8 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- LICENSE -->
+<div id="license"></div>
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -205,6 +230,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
+<div id="contact"></div>
+
 ## Contact
 
 Mason Flint - mason.flint@things.dev.com
